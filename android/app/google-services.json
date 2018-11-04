@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "808960720537",
+    "firebase_url": "https://challenge-kors.firebaseio.com",
+    "project_id": "challenge-kors",
+    "storage_bucket": "challenge-kors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808960720537:android:7bd89d9ebd6d15a2",
+        "android_client_info": {
+          "package_name": "com.qlouder.challenge_kors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808960720537-j8lqc9e8p1ke87h5rit73r77irs0h3lf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZBy7Thc049tNXUEpRJMo5Uc2ZtFhx3Nc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
