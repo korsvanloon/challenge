@@ -63,13 +63,19 @@ class _TranslationPageState extends State<TranslationPage> {
     if (!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
 
+    // hackity hack... please have mercy :)
+
     final _translationsRef = db.reference().child('translations').reference();
+
+    // look for an existing translation
     final query = _translationsRef
         .orderByChild(source.code)
         .equalTo(_textController.text)
         .limitToFirst(1);
-    final entry = ((await query.onValue.first).snapshot.value as Map).entries.first;
+    final entry = ((await query.onValue.first).snapshot.value as Map)?.entries?.first;
+
     if (entry == null) {
+      // ad a new translation
       _translationsRef.onChildChanged.listen((e) {
         setState(() {
           result = (e.snapshot.value as Map)[target.code];
@@ -77,14 +83,16 @@ class _TranslationPageState extends State<TranslationPage> {
       });
       _translationsRef.push().set({
         source.code: _textController.text,
-        target.code: false,
+        target.code: '',
       });
     } else {
       if (entry.key == target) {
+        // if already translated in the right language, we're done!
         setState(() {
           result = entry.value;
         });
       } else {
+        // update the translation for the new language
         _translationsRef.child(entry.key).update({
           source.code: _textController.text,
           target.code: '',

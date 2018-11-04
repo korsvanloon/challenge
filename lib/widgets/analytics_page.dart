@@ -1,7 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
-import 'package:translation_challenge/widgets/tabs_page.dart';
 
 class AnalyticsPage extends StatefulWidget {
   AnalyticsPage({Key key, this.title, this.analytics, this.observer}) : super(key: key);
